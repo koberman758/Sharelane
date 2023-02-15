@@ -7,7 +7,7 @@ import static org.testng.Assert.assertEquals;
 
 public class NegativeTestsForZipCodeAndSignUp {
     @Test
-    public void zipCode4Digits(){
+    public void zipCode4Digits() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.sharelane.com/cgi-bin/register.py");
@@ -16,11 +16,11 @@ public class NegativeTestsForZipCodeAndSignUp {
         String actualError = driver.findElement(By.cssSelector("span[class=error_message]")).getText();
         assertEquals(actualError, "Oops, error on page. ZIP code should have 5 digits",
                 "wrong error message show");
-       driver.quit();
+        driver.quit();
     }
 
     @Test
-    public void zipCode6Digits(){
+    public void zipCode6Digits() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.sharelane.com/cgi-bin/register.py"); //шаг1
@@ -33,7 +33,7 @@ public class NegativeTestsForZipCodeAndSignUp {
     }
 
     @Test
-    public void zipCode0Digits(){
+    public void zipCodeEmpty() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.sharelane.com/cgi-bin/register.py");
@@ -46,7 +46,7 @@ public class NegativeTestsForZipCodeAndSignUp {
     }
 
     @Test
-    public void zipCodeLetters(){
+    public void zipCodeLetters() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");//выставление системной переменной
         WebDriver driver = new ChromeDriver();  //0. Открыть браузер
         driver.get("https://www.sharelane.com/cgi-bin/register.py");
@@ -59,7 +59,7 @@ public class NegativeTestsForZipCodeAndSignUp {
     }
 
     @Test
-    public void zipCodeSymbols(){
+    public void zipCodeSymbols() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");//выставление системной переменной
         WebDriver driver = new ChromeDriver();  //0. Открыть браузер
         driver.get("https://www.sharelane.com/cgi-bin/register.py");
@@ -72,7 +72,7 @@ public class NegativeTestsForZipCodeAndSignUp {
     }
 
     @Test
-    public void FirstNameEmpty(){
+    public void firstNameEmpty() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.sharelane.com/cgi-bin/register.py?page=1&zip_code=12345");
@@ -89,7 +89,7 @@ public class NegativeTestsForZipCodeAndSignUp {
     }
 
     @Test
-    public void FirstNameLettersSymbols(){
+    public void firstNameLettersSymbols() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.sharelane.com/cgi-bin/register.py?page=1&zip_code=12345");
@@ -106,7 +106,7 @@ public class NegativeTestsForZipCodeAndSignUp {
     }
 
     @Test
-    public void FirstNameSymbols(){
+    public void firstNameSymbols() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.sharelane.com/cgi-bin/register.py?page=1&zip_code=12345");
@@ -123,7 +123,7 @@ public class NegativeTestsForZipCodeAndSignUp {
     }
 
     @Test
-    public void FirstNameNumbers(){
+    public void firstNameNumbers() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.sharelane.com/cgi-bin/register.py?page=1&zip_code=12345");
@@ -140,7 +140,7 @@ public class NegativeTestsForZipCodeAndSignUp {
     }
 
     @Test
-    public void LastNameSymbols(){
+    public void lastNameSymbols() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.sharelane.com/cgi-bin/register.py?page=1&zip_code=12345");
@@ -157,7 +157,7 @@ public class NegativeTestsForZipCodeAndSignUp {
     }
 
     @Test
-    public void LastNameNumbers(){
+    public void lastNameNumbers() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.sharelane.com/cgi-bin/register.py?page=1&zip_code=12345");
@@ -174,7 +174,7 @@ public class NegativeTestsForZipCodeAndSignUp {
     }
 
     @Test
-    public void DoubleAtForEmail(){
+    public void doubleAtForEmail() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.sharelane.com/cgi-bin/register.py?page=1&zip_code=12345");
@@ -191,7 +191,7 @@ public class NegativeTestsForZipCodeAndSignUp {
     }
 
     @Test
-    public void NoDomainForEmail(){
+    public void noDomainForEmail() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.sharelane.com/cgi-bin/register.py?page=1&zip_code=12345");
@@ -208,7 +208,7 @@ public class NegativeTestsForZipCodeAndSignUp {
     }
 
     @Test
-    public void ForbiddenCharactersForEmail(){
+    public void forbiddenCharactersForEmail() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.sharelane.com/cgi-bin/register.py?page=1&zip_code=12345");
@@ -225,7 +225,7 @@ public class NegativeTestsForZipCodeAndSignUp {
     }
 
     @Test
-    public void EmptyEmail(){
+    public void emptyEmail() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.sharelane.com/cgi-bin/register.py?page=1&zip_code=12345");
@@ -242,7 +242,7 @@ public class NegativeTestsForZipCodeAndSignUp {
     }
 
     @Test
-    public void EmptyPassword(){
+    public void emptyPassword() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.sharelane.com/cgi-bin/register.py?page=1&zip_code=12345");
@@ -259,7 +259,7 @@ public class NegativeTestsForZipCodeAndSignUp {
     }
 
     @Test
-    public void ShortPassword(){
+    public void shortPassword() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.sharelane.com/cgi-bin/register.py?page=1&zip_code=12345");
@@ -276,7 +276,7 @@ public class NegativeTestsForZipCodeAndSignUp {
     }
 
     @Test
-    public void EmptyConfirmPassword(){
+    public void emptyConfirmPassword() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.sharelane.com/cgi-bin/register.py?page=1&zip_code=12345");
@@ -293,7 +293,7 @@ public class NegativeTestsForZipCodeAndSignUp {
     }
 
     @Test
-    public void MismatchConfirmPassword(){
+    public void mismatchConfirmPassword() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.sharelane.com/cgi-bin/register.py?page=1&zip_code=12345");
